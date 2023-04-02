@@ -1,0 +1,173 @@
+\documentclass[a4paper, fontsize=14pt]{article}
+\usepackage{scrextend}
+\usepackage{indentfirst, fancyhdr, amsfonts, mathtools, amssymb}
+\usepackage{titlesec} %работа с рубрикацией
+\usepackage{tocloft} %настройки оглавления
+\usepackage[T2A]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{hyperref} %кликабельное оглавление
+\usepackage[left=3.7cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{tempora} %настраиваем шрифт типа TNR                                   
+\usepackage{newtxmath} %делаем шрифт формул похожим на TNR
+\usepackage[labelsep=endash]{caption}
+\usepackage{listings}
+\usepackage{ucs}
+\usepackage{amsmath}
+\usepackage{pdfpages}
+\usepackage{tocloft}
+\usepackage{textcase}
+\usepackage{textcomp}
+\renewcommand\cftsecafterpnum{\vskip15pt}
+\lstset{
+  columns=fullflexible,
+  breaklines=true,
+}
+\linespread{1}
+\setcounter{page}{1} %в зависимости от того, какой по счёту страницей должно быть оглавление!
+
+%НАСТРОЙКИ ОГЛАВЛЕНИЯ
+
+\renewcommand{\cftsecaftersnum}{.} %точки после номеров разделов и подразделов в оглавлении
+\renewcommand{\cftsubsecaftersnum}{.}
+\renewcommand{\cftsecfont}{\normalfont} %разделы в оглавлении пишутся обычным (не жирным) шрифтом
+\renewcommand{\cftsecpagefont}{\normalfont} %соответствующие им страницы тоже
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} %расставляем точки между названиями разделов и их страницами
+\addto\captionsrussian{\renewcommand\contentsname{СОДЕРЖАНИЕ}} %хотим, чтобы слово "Содержание" писалось капсом
+\renewcommand{\cfttoctitlefont}{\hfil\bfseries} %слово СОДЕРЖАНИЕ по центру жирным
+\renewcommand{\cftaftertoctitle}{\hfill}
+% \renewcommand{\cftsecfont}{\MakeUppercase}
+
+\captionsetup[figure]{name=Рисунок}
+%НАСТРОЙКИ РУБРИКАЦИИ
+\titleformat*{\section}{\center\bf} %названия разделов и подразделов по середине жирным шрифтом
+\titleformat*{\subsection}{\center\bf}
+\titlelabel{\thetitle.\quad} %название раздела и его номер отделены точкой
+
+%НАСТРОЙКИ БИБЛИОГРАФИИ
+\addto\captionsrussian{\renewcommand\refname{СПИСОК ЛИТЕРАТУРЫ}} %хотим, чтобы слова "Список литературы" писались капсом
+\makeatletter
+\renewcommand{\@biblabel}[1]{#1.} %хотим, чтобы в списке литературы номера источников писались в формате "No. <...>", а не "[No] <...>"
+\makeatother
+\newtheorem{definition}{Определение}
+
+% НАСТРОЙКИ ПРОИЗВОДНЫХ
+\newcommand{\MD}[1]{\mathbb{D}_{#1}^{\alpha}} % Marchaud derivative
+\newcommand{\RLD}[2]{{}_{#1}\mathcal{D}_{#2}^{\alpha}} % Riemann Liuville derivative
+\newcommand{\RLI}[2]{{}_{#1}\mathcal{I}_{#2}^{\alpha}} % Riemann Liuville integral
+
+
+
+\begin{document}
+% \includepdf[pages={1-3}]{src/word pdfs.pdf} % титульник
+\tableofcontents
+
+\newpage
+\section*{ВВЕДЕНИЕ}
+\addcontentsline{toc}{section}{Введение}
+
+\section[Некоторые сведения из группового анализа]{НЕКОТОРЫЕ СВЕДЕНИЯ ИЗ ГРУППОВОГО АНАЛИЗА}
+
+\section[Дробные производные Римана-Лиувилля]{ДРОБНЫЕ ПРОИЗВОДНЫЕ РИМАНА-ЛИУВИЛЛЯ}
+$\RLD{a}{x}$
+\section[Дробные производные Маршо]{ДРОБНЫЕ ПРОИЗВОДНЫЕ МАРШО???????????}
+
+\begin{equation}
+  \MD{ +} \psi=\frac{\left\{\alpha\right\}}{\Gamma(1-\left\{\alpha\right\})}\int_{0}^{\infty}\frac{f^{(n)}(x)-f^{(n)}(x-\xi)}{\xi^{1+\left(\alpha\right)}}d\xi
+\end{equation}
+\begin{equation}
+  \MD{ -} \psi=\frac{\{\alpha\}}{\Gamma(1-\{\alpha\})}\int_{0}^{\infty}\frac{f^{(n)}(x)-f^{(n)}(x+\xi)}{\xi^{1+\{\alpha\}}\ } d\xi
+\end{equation}
+
+Здесь $n=[\alpha], \alpha = n + \{ \alpha \}$. При $\alpha \in (1, 2)$ имеем $n=1$. 
+% ⠀⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⡄⡀⠀⠀⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⡄
+% ⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⠠⠀⠰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁
+% ⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⠀
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠋⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠒⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⡤⠀⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣠⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⠁⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⠊⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠖⠀⠸⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣵⣇⣠⠂⠀⠀⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠣⡋⠛⠛⠗⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⢘⣧⣿⣦⣀⠀⠀⠀⠀⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠻⣉⠓⣤⡈⠁⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠓⠶⡞⠛⠦⠈⠠⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣌⢃⣽⣗⣆⡈⢀⠀⠀⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡈⢦⡩⣧⢈⠀⠄⠀⠀⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠫⠹⣏⣙⠛⢅⠀⠀⠀⠐⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣤⣌⢉⡀⠀⠑⡀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢏⠜⠀⣠⡇⡀⠰⢾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢫⡆⠀⣰⣿⣾⡇⠀⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢫⠄⢀⣼⣿⣿⣿⣧⣾⠀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢁⠄⢀⣼⣿⣿⣿⣿⣿⣷⢰⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠡⠄⢀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣄⡆⠀⠙⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢳⠖⠀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣥⣴⠀⠙⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠖⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⣠⠀⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⠞⠀⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⣠⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠡⠆⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⡀⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠔⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠖⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠚⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+% ⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣠⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠖⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇
+% ⠠⡧⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡄⠀⠸⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠱⠂⠀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⣿⠀
+% ⠀⣿⣄⡘⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡆⠀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢛⡴⠛⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣣⣿⠀
+% ⠀⠀⠀⣿⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣼⡀⡄⠈⠉⠻⠿⠿⠿⠿⢟⣛⡉⠴⠋⢁⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀
+% ⠀⠀⣴⣿⣷⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣌⣢⡐⠄⠐⠤⠕⠒⠈⣉⣤⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⠀
+% ⠀⠀⢽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⣿⣿⣯⣿⣿⣽⣿⣟⣷⣾⣷⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⢻⣿⣿⡇⠀
+% ⠀⠀⠀⠀⠉⠉⠉⠋⠉⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠿⠿⠿⠿⠿⠿⠿⠿⠿⠛⠛⠛⠁⠀⠙⠛⠁⠀
+
+\section[Обобщение уравнения Шрёдингера с производными Римана-Лиувилля]{ОБОБЩЕНИЕ УРАВНЕНИЯ ШРЁДИНГЕРА С ПРОИЗВОДНЫМИ РИМАНА-ЛИУВИЛЛЯ}
+
+
+\section[Обобщение уравнения  Шрёдингера с производными Маршо]{ОБОБЩЕНИЕ УРАВНЕНИЯ ШРЁДИНГЕРА С ПРОИЗВОДНЫМИ МАРШО??????????}
+
+
+\newpage
+\section*{ЗАКЛЮЧЕНИЕ}
+\addcontentsline{toc}{section}{Заключение}
+В ходе выполнения курсовой работы был изучен метод численного решения волнового уравнения и уравнения затухающих колебаний
+с помощью явной разностной схемы с краевыми условиями Мура и отражения. Показано, что поглощение по условиям Мура 
+выполняется корректно в случае колебания с затуханием. В качестве примера комбинации отражающих и поглощающих условий была рассмотрена дифракция на двух щелях.
+
+Также был смоделирован переход волнового пакета из одной однородной среды в другую и продемонстрировано разложение волны на преломленную
+с меньшей амплитудой и отраженную, которая сложилась с проходящей волной. Был программно реализовано затухание колебательного процесса, 
+а также его применимость к построению идеально согласованных слоев (PML).
+
+\newpage
+
+\addcontentsline{toc}{section}{Список литературы}
+\begin{thebibliography}{9}
+  \bibitem{Chen}
+  Chen, Jingyi Zhao, Jian-Guo.,
+  Application of the Nearly Perfectly Matched Layer to Seismic-Wave Propagation Modeling in Elastic Anisotropic Media. //
+  The Bulletin of the Seismological Society of America. — 2011 — V.101. — P. 2866-2871.
+  \bibitem{Mur}
+  Mur, G., Absorbing boundary conditions for the finite-difference approximation of the time-domain electromagnetic-fieldequations //
+   IEEE Trans. Electromagn. Compat. — 1981 — Vol. EMC-23, No. 4,— P. 377–382.
+  \bibitem{berenger} 
+  J. Berenger, A perfectly matched layer for the absorption of electromagnetic waves [Текст] / J. Berenger //
+  Journal of Computational Physics. — 1994. — V. 114. — P. 185-200
+  \bibitem{Loh}
+  P.-R. Loh, A. F. Oskooi, M. Ibanescu, M. Skorobogatiy, S. G. Johnson.,
+  Fundamental relation between phase and group velocity, and application
+  to the failure of perfectly matched layers in backward-wave structures [Текст] //
+  Physical Review E. — 2009. — V. 79, — P. 13-24.
+  \bibitem{ChenHsuZhou} 
+  Chen G., Hsu S., Zhou J., Snapback repellers as a cause of chaotic vibration of the wave equation
+  with a van der Pol boundary condition and energy injection at the middle of the span [Текст] // Journal of
+  Mathematical Physics — 1998. — V.39 — P. 6459–6489
+  \bibitem{Johnson}
+  S. G. Johnson, Notes on the algebraic structure of wave equations. [Текст] /  S. G. Johnson // Journal of Mathematical Physics — 2001. — P. 18
+  \bibitem{kalitkin}
+  Калиткин Н.Н. Численные методы [Текст]: учебник / Н.Н. Калиткин. — Москва: Наука, 1978. — 512 с.
+  \bibitem{samarskiy}
+  Самарский А.А. Теория разностных схем [Текст]: учебник / А.А.Самарский, — Москва: Наука, 1977. — 656 с.
+  \end{thebibliography}
+
+ % \includepdf[pages={17-31}]{src/word pdfs.pdf}
+\end{document}
+
+
