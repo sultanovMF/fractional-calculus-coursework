@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1680423384 "/home/murellos/projects/frac-calc/frac-anal.tex" "out/frac-anal.pdf" "frac-anal" 1680423388
+["pdflatex"] 1680527638 "/home/murellos/projects/frac-calc/frac-anal.tex" "out/frac-anal.pdf" "frac-anal" 1680527639
   "/etc/texmf/web2c/texmf.cnf" 1672117256 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/murellos/.texlive2021/texmf-var/fonts/tfm/lh/lh-t2a/larm1440.tfm" 1674726199 3256 3daaa33cf35cf3f354983aa3214ecd7f ""
-  "/home/murellos/projects/frac-calc/frac-anal.tex" 1680423375 14194 1986f1a1a63d8b0be81ac02c9c2cf458 ""
+  "/home/murellos/projects/frac-calc/frac-anal.tex" 1680527636 14264 51c407faca8bab99428160a427948a36 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/tempora/t2a-tempora.enc" 1442533853 3023 c4581b906237349b927d8aa9ff8a2b60 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/tempora/tmp_q3dzgc.enc" 1454715823 2764 ab775c31a11117826e18b76f6c877df7 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -178,10 +178,10 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1672117302 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1672117325 2799294 7e2c62336b1b0bdada590cfc28ecd197 ""
-  "frac-anal.tex" 1680423375 14194 1986f1a1a63d8b0be81ac02c9c2cf458 ""
-  "out/frac-anal.aux" 1680423387 4712 685d6a0ab1d0874dd2515e8e33ac2445 "pdflatex"
-  "out/frac-anal.out" 1680423387 2314 20f2736de9ee8ed15ee2094bd92808de "pdflatex"
-  "out/frac-anal.toc" 1680423387 3427 6a8ff0c91a7437156d9a79a606837583 "pdflatex"
+  "frac-anal.tex" 1680527636 14264 51c407faca8bab99428160a427948a36 ""
+  "out/frac-anal.aux" 1680527639 4712 685d6a0ab1d0874dd2515e8e33ac2445 "pdflatex"
+  "out/frac-anal.out" 1680527639 2314 20f2736de9ee8ed15ee2094bd92808de "pdflatex"
+  "out/frac-anal.toc" 1680527639 3427 6a8ff0c91a7437156d9a79a606837583 "pdflatex"
   (generated)
   "out/frac-anal.aux"
   "out/frac-anal.log"
