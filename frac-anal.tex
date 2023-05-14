@@ -52,10 +52,14 @@
 \newtheorem{definition}{Определение}
 
 % НАСТРОЙКИ ПРОИЗВОДНЫХ
-\newcommand{\MD}[1]{\mathbb{D}_{#1}^{\alpha}} % Marchaud derivative
-\newcommand{\RLD}[2]{{}_{#1}\mathcal{D}_{#2}^{\alpha}} % Riemann Liuville derivative
-\newcommand{\RLI}[2]{{}_{#1}\mathcal{I}_{#2}^{\alpha}} % Riemann Liuville integral
-\newcommand{\D}[2]{\operatorname{D}_{#1}^{#2}}
+\newcommand{\MD}[2]{\mathbb{D}_{#1}^{\alpha}[#2]} % Marchaud derivative
+\newcommand{\RLD}[3]{{}_{#1}\mathcal{D}_{#2}^{\alpha} \left[#3\right]} % Riemann Liuville derivative
+\newcommand{\D}[3]{D_{#1}^{#2} \left[ #3 \right]} % Riemann Liuville derivative
+
+\newcommand{\RLDa}[4]{{}_{#1}\mathcal{D}_{#2}^{#4} \left[#3\right]} % Riemann Liuville derivative with var alpha
+
+\newcommand{\RLI}[3]{{}_{#1}\mathcal{I}_{#2}^{\alpha} #3} % Riemann Liuville integral
+
 
 
 \begin{document}
@@ -66,111 +70,419 @@
 \section*{ВВЕДЕНИЕ}
 \addcontentsline{toc}{section}{Введение}
 
-\section[Некоторые сведения из группового анализа]{НЕКОТОРЫЕ СВЕДЕНИЯ ИЗ ГРУППОВОГО АНАЛИЗА}
 
-\section[Дробные производные Римана-Лиувилля]{ДРОБНЫЕ ПРОИЗВОДНЫЕ РИМАНА-ЛИУВИЛЛЯ}
-$\RLD{a}{x}$
-$\D{x}{n} \psi(x, y)$
+\section[Теоретическая часть]{ТЕОРЕТИЧЕСКАЯ ЧАСТЬ}
+
+\subsection[Основные сведения о дробных производных Римана-Лиувилля и Маршо]{ОСНОВНЫЕ СВЕДЕНИЯ О ДРОБНЫХ ПРОИЗВОДНЫХ РИМАНА-ЛИУВИЛЛЯ И МАРШО}
+
+\subsection[Алгоритм поиска симметрий дробно-дифференциальных уравнений]{АЛГОРИТМ ПОИСКА СИММЕТРИЙ ДРОБНО-ДИФФЕРЕНЦИАЛЬНЫХ УРАВНЕНИЙ}
+% $\RLD{a}{x}$
+% $\D{x}{n} \psi(x, y)$
 
 
-\section[Дробные производные Маршо]{ДРОБНЫЕ ПРОИЗВОДНЫЕ МАРШО???????????}
+% \begin{equation}
+%   \MD{ +} \psi=\frac{\left\{\alpha\right\}}{\Gamma(1-\left\{\alpha\right\})}\int_{0}^{\infty}\frac{f^{(n)}(x)-f^{(n)}(x-\xi)}{\xi^{1+\left(\alpha\right)}}d\xi
+% \end{equation}
+% \begin{equation}
+%   \MD{ -} \psi=\frac{\{\alpha\}}{\Gamma(1-\{\alpha\})}\int_{0}^{\infty}\frac{f^{(n)}(x)-f^{(n)}(x+\xi)}{\xi^{1+\{\alpha\}}\ } d\xi
+% \end{equation}
+
+% Здесь $n=[\alpha], \alpha = n + \{ \alpha \}$. При $\alpha \in (1, 2)$ имеем $n=1$. 
+
+
+
 
 \begin{equation}
-  \MD{ +} \psi=\frac{\left\{\alpha\right\}}{\Gamma(1-\left\{\alpha\right\})}\int_{0}^{\infty}\frac{f^{(n)}(x)-f^{(n)}(x-\xi)}{\xi^{1+\left(\alpha\right)}}d\xi
+  \label{eq:cont}
+  \begin{split}
+    {\huge \varrho}_{Lu} = L\left(\eta^u - \sum_{i=0}^{n} \xi^i u_i \right) + \sum_{i=0}^{n} \xi^i \D{i}{}{L u}
+  \end{split}
+\end{equation}
+
+Например, если $u = u(t, x)$, тогда по формуле \eqref{eq:cont} рассчитаем координаты продолжения необходимых в дальнейшем изложении операторов:
+
+\begin{equation}
+  \label{eq:cont_t}
+  \varrho_{\frac{\partial u}{\partial t}} = \D{t}{}{\eta^u} - u_t \D{t}{}{\xi^t}- u_x \D{t}{}{\xi^x}
+\end{equation}
+
+\begin{equation}
+  \label{eq:cont_RL_left}
+  \begin{split}\varrho_{\RLD{a}{x}{u}} = \RLD{a}{x}{\eta^u} &+ \sum_{n=0}^{\infty} \binom{\alpha}{n} \frac{n-\alpha}{n+1} \RLDa{a}{x}{u}{\alpha - n} \D{x}{n+1}{\xi^x} - \\
+    &- \sum_{n=1}^{\infty} \binom{\alpha}{n} \RLDa{a}{x}{u_t}{\alpha-n} \D{x}{n}{\xi^t}
+  \end{split}
 \end{equation}
 \begin{equation}
-  \MD{ -} \psi=\frac{\{\alpha\}}{\Gamma(1-\{\alpha\})}\int_{0}^{\infty}\frac{f^{(n)}(x)-f^{(n)}(x+\xi)}{\xi^{1+\{\alpha\}}\ } d\xi
+  \label{eq:cont_RL_right}
+  \begin{split}\varrho_{\RLD{x}{b}{u}} = \RLD{x}{b}{\eta^u} &+ \sum_{n=0}^{\infty} \binom{\alpha}{n} (-1)^n \frac{n-\alpha}{n+1} \RLDa{x}{b}{u}{\alpha - n} \D{x}{n+1}{\xi^x} - \\
+    &- \sum_{n=1}^{\infty} \binom{\alpha}{n} (-1)^n \RLDa{x}{b}{u_t}{\alpha-n} \D{x}{n}{\xi^t}
+  \end{split}
 \end{equation}
 
-Здесь $n=[\alpha], \alpha = n + \{ \alpha \}$. При $\alpha \in (1, 2)$ имеем $n=1$. 
-% ⠀⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⡄⡀⠀⠀⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⡄
-% ⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⠠⠀⠰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁
-% ⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⠀
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠋⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠒⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⡤⠀⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣠⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⠁⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⠊⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠖⠀⠸⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣵⣇⣠⠂⠀⠀⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠣⡋⠛⠛⠗⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⢘⣧⣿⣦⣀⠀⠀⠀⠀⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠻⣉⠓⣤⡈⠁⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠓⠶⡞⠛⠦⠈⠠⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣌⢃⣽⣗⣆⡈⢀⠀⠀⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡈⢦⡩⣧⢈⠀⠄⠀⠀⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠫⠹⣏⣙⠛⢅⠀⠀⠀⠐⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣤⣌⢉⡀⠀⠑⡀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢏⠜⠀⣠⡇⡀⠰⢾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢫⡆⠀⣰⣿⣾⡇⠀⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢫⠄⢀⣼⣿⣿⣿⣧⣾⠀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢁⠄⢀⣼⣿⣿⣿⣿⣿⣷⢰⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠡⠄⢀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣄⡆⠀⠙⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢳⠖⠀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣥⣴⠀⠙⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠖⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⣠⠀⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⠞⠀⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⣠⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠡⠆⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⡀⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠔⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-% ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠖⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠚⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-% ⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣠⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠖⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇
-% ⠠⡧⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡄⠀⠸⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠱⠂⠀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⣿⠀
-% ⠀⣿⣄⡘⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡆⠀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢛⡴⠛⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣣⣿⠀
-% ⠀⠀⠀⣿⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣼⡀⡄⠈⠉⠻⠿⠿⠿⠿⢟⣛⡉⠴⠋⢁⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀
-% ⠀⠀⣴⣿⣷⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣌⣢⡐⠄⠐⠤⠕⠒⠈⣉⣤⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⠀
-% ⠀⠀⢽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⣿⣿⣯⣿⣿⣽⣿⣟⣷⣾⣷⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⢻⣿⣿⡇⠀
-% ⠀⠀⠀⠀⠉⠉⠉⠋⠉⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠿⠿⠿⠿⠿⠿⠿⠿⠿⠛⠛⠛⠁⠀⠙⠛⠁⠀
+Положим, что 
+\begin{equation}
+  \label{eq:linear_autonom}
+  \xi^x = \xi^x(t, x), \quad \xi^t = \xi^t(t, x), \quad \eta^u = \eta_0^u(t, x) + \eta^u_1 u.
+\end{equation}
 
-\section[Обобщение уравнения Шрёдингера с производными Римана-Лиувилля]{ОБОБЩЕНИЕ УРАВНЕНИЯ ШРЁДИНГЕРА С ПРОИЗВОДНЫМИ РИМАНА-ЛИУВИЛЛЯ}
+Такие однопараметрические группы преобразований с координатами \eqref{eq:linear_autonom} называются группами линейно-автономных преобразований.
+
+Дробно-дифференциальные операторы не обладают свойством линеаризации. Это связано с их нелокальностью в отличие от операторов целочисленного дифференцирования. Поэтому нелинейные преобразования не могут преобразовывать линейный дробный оператор в оператор того же вида. На данный момент неизвестно ни одной симметрии дробно-дифференциальных уравнений, не являющейся линейно-автономной симметрией. (подробнее см. \cite{luka} стр. 138).
+
+В таких предоположениях координаты можно вычислить по формулам:
+\begin{equation}
+  \label{eq:cont_RL_left_la}
+  \begin{split}\varrho_{\RLD{a}{x}{u}} = \RLD{a}{x}{\eta^u_0} &+ \sum_{n=0}^{\infty} \binom{\alpha}{n} \RLDa{a}{x}{u}{\alpha - n}  \left( \D{x}{n}{\eta^u_1} + \frac{n-\alpha}{n+1} \D{x}{n+1}{\xi^x} \right)- \\
+    &- \sum_{n=1}^{\infty} \binom{\alpha}{n} \RLDa{a}{x}{u_t}{\alpha-n} \D{x}{n}{\xi^t}
+  \end{split}
+\end{equation}
+\begin{equation}
+  \label{eq:cont_RL_right_la}
+  \begin{split}\varrho_{\RLD{x}{b}{u}} = \RLD{x}{b}{\eta^u_0} &+ \sum_{n=0}^{\infty} \binom{\alpha}{n} \RLDa{x}{b}{u}{\alpha - n} \left( \D{x}{n}{\eta^u_1} + (-1)^n \frac{n-\alpha}{n+1}  \D{x}{n+1}{\xi^x} \right)- \\
+    &- \sum_{n=1}^{\infty} \binom{\alpha}{n} (-1)^n \RLDa{x}{b}{u_t}{\alpha-n} \D{x}{n}{\xi^t}
+  \end{split}
+\end{equation}
+
+\begin{equation}
+  \label{eq:MD_xux}
+  \MD{\pm}{x f_x} = \MD{\pm}{f} + x \MD{\pm}{f_x}
+\end{equation}
+
+\section[Практическая часть]{ПРАКТИЧЕСКАЯ ЧАСТЬ}
+\subsection[Поиск симметрий дробно-дифференциального обобщения уравнения Шредингера с производными Римана-Лиувилля]{ПОИСК СИММЕТРИЙ ДРОБНО-ДИФФЕРЕНЦИАЛЬНОГО ОБОБЩЕНИЯ УРАВНЕНИЯ ШРЕДИНГЕРА С ПРОИЗВОДНЫМИ РИМАНА-ЛИУВИЛЛЯ}
+
+Рассматривается дробно-дифферециальное обобщение уравнение Шредингера:
+\begin{equation}
+  \label{eq:shredinger_RL_inline}
+  i \cfrac{\partial \psi}{\partial t} = \RLD{a}{x}{\psi} + \RLD{x}{b}{\psi}, \quad \alpha \in (1, 2), \quad t > 0, \quad x \in [a, b]
+\end{equation}
+
+Представим функцию $\psi(t, x)$ в виде:
+
+\begin{equation*}
+  \psi(t, x) = u(t, x) + i v(t, x)
+\end{equation*}
+
+Тогда \eqref{eq:shredinger_RL_inline} можно записать в виде системы:
+
+\begin{equation}
+  \label{eq:shredinger_RL_system}
+  \begin{cases}
+    \cfrac{\partial u}{\partial t} = \RLD{a}{x}{v} + \RLD{x}{b}{v} \\
+    \cfrac{\partial v}{\partial t} = - \left( \RLD{a}{x}{u} + \RLD{x}{b}{u} \right)
+  \end{cases}
+\end{equation}
 
 
-\section[Обобщение уравнения  Шрёдингера с производными Маршо]{ОБОБЩЕНИЕ УРАВНЕНИЯ ШРЁДИНГЕРА С ПРОИЗВОДНЫМИ МАРШО??????????}
+Инфинитезимальный генератор будем искать в виде:
+\begin{equation*}
+  X = \tau \frac{\partial}{\partial t}  + \xi \frac{\partial}{\partial x}  + \mu \frac{\partial}{\partial u}  + \vartheta  \frac{\partial}{\partial v}
+\end{equation*}
 
+Тогда инфинитезимальный оператор продолженной группы имеет вид:
+\begin{equation}
+  \label{eq:generator}
+  \begin{split}
+    \tilde{X} = X &+ \left(\zeta^u \frac{\partial }{\partial u_t} + \rho^u \frac{\partial }{\partial (\RLD{a}{x}{u})} + \lambda^u \frac{\partial }{\partial (\RLD{x}{b}{u})} \right) +\\
+    &+\left(\zeta^v \frac{\partial }{\partial v_t}  + \rho^v \frac{\partial }{\partial (\RLD{a}{x}{v})}  + \lambda^v \frac{\partial }{\partial (\RLD{x}{b}{v})} \right)
+  \end{split}
+\end{equation}
 
+Координаты $\zeta^u, \zeta^v$ будут иметь вид \eqref{eq:cont_t}, $\rho^u, \rho^v$ вид \eqref{eq:cont_RL_left_la}, а $\lambda^u, \lambda^v$ соответственно вид \eqref{eq:cont_RL_right_la}.
+
+Применим генератор \eqref{eq:generator} к системе \eqref{eq:shredinger_RL_system}:
+
+\begin{equation}
+  \begin{cases}
+    \zeta^u = \rho^v + \lambda^v \\ 
+    \zeta^v = - (\rho^u + \lambda^u)
+  \end{cases}
+\end{equation}
+
+Определяющая система примет следующий вид:
+\begin{equation}
+  \label{eq:RL_def_sys}
+  \begin{cases}
+    \begin{aligned}
+      u \D{t}{}{\mu_1} + \D{t}{}{\mu_0} + \left(\RLD{a}{x}{v} + \RLD{x}{b}{v}\right) \left(\mu_1 + \D{t}{}{\tau} \right) -  \D{x}{}{u} \D{t}{}{\xi} = \\
+      = \RLD{a}{x}{\vartheta _0} + \sum_{n=0}^{\infty} \binom{\alpha}{n} \RLDa{a}{x}{v}{\alpha - n}  \left( \D{x}{n}{\vartheta _1} + \frac{n-\alpha}{n+1} \D{x}{n+1}{\xi} \right)+ \\
+      + \RLD{x}{b}{\vartheta _0} + \sum_{n=0}^{\infty} \binom{\alpha}{n} \RLDa{x}{b}{v}{\alpha - n} \left( \D{x}{n}{\vartheta _1} + (-1)^n \frac{n-\alpha}{n+1}  \D{x}{n+1}{\xi} \right)+ \\
+      + \sum_{n=1}^{\infty} \binom{\alpha}{n} \RLDa{a}{x}{\RLD{a}{x}{u} + \RLD{x}{b}{u}}{\alpha-n} \D{x}{n}{\tau} + \\
+      + \sum_{n=1}^{\infty} \binom{\alpha}{n} (-1)^n \RLDa{x}{b}{\RLD{a}{x}{u} + \RLD{x}{b}{u}}{\alpha-n} \D{x}{n}{\tau}
+    \end{aligned} \\
+
+    \begin{aligned}
+      v \D{t}{}{\vartheta _1} + \D{t}{}{\vartheta _0} + \left(\RLD{a}{x}{u} + \RLD{x}{b}{u}\right) \left(\D{t}{}{\tau} - \vartheta _1 \right) -  \D{x}{}{v} \D{t}{}{\xi} = \\
+      = - \RLD{a}{x}{\mu_0} - \sum_{n=0}^{\infty} \binom{\alpha}{n} \RLDa{a}{x}{u}{\alpha - n}  \left( \D{x}{n}{\mu_1} + \frac{n-\alpha}{n+1} \D{x}{n+1}{\xi} \right)- \\
+      - \RLD{x}{b}{\mu_0} + \sum_{n=0}^{\infty} \binom{\alpha}{n} \RLDa{x}{b}{u}{\alpha - n} \left( \D{x}{n}{\mu_1} + (-1)^n \frac{n-\alpha}{n+1}  \D{x}{n+1}{\xi} \right)+ \\
+      + \sum_{n=1}^{\infty} \binom{\alpha}{n} \RLDa{a}{x}{\RLD{a}{x}{v} + \RLD{x}{b}{v}}{\alpha-n} \D{x}{n}{\tau} + \\
+      + \sum_{n=1}^{\infty} \binom{\alpha}{n} (-1)^n \RLDa{x}{b}{\RLD{a}{x}{v} + \RLD{x}{b}{v}}{\alpha-n} \D{x}{n}{\tau}
+    \end{aligned}
+  \end{cases}
+\end{equation}
+
+Расщепив систему \eqref{eq:RL_def_sys} по $u$ и $v$ (первые слагаемые в каждой системе), можно сделать вывод о том, что $\mu_1 = \mu_1(x), \vartheta _1 = \vartheta _1(x)$.
+
+Если расщепить по $\RLDa{a}{x}{v}{\alpha - n}$, то получим, что 
+\begin{equation}
+  \label{eq:UwU}
+  \D{x}{n}{\vartheta _1} + \frac{n - \alpha}{n + 1} \D{x}{n+1}{\xi}  = 0
+\end{equation}
+
+Рассмотрим слагаемые \eqref{eq:UwU} при $n = 1$ и $n = 2$:
+\begin{gather}
+  \label{eq:UwUwU_1}\D{x}{1}{\vartheta _1} + \frac{1 - \alpha}{2} \D{x}{2}{\xi} = 0 \\
+  \label{eq:UwUwU_2}\D{x}{2}{\vartheta _1} + \frac{2 - \alpha}{3} \D{x}{3}{\xi} = 0
+\end{gather}
+
+Продифференцируем \eqref{eq:UwUwU_1} по x и из полученного выражения вычтем \eqref{eq:UwUwU_2}, получим, что:
+
+\begin{equation}
+  \label{eq:xi}
+  \D{x}{3}{\xi} = 0 \Rightarrow \xi = A x^2 + B x + C
+\end{equation}
+
+Подставляя \eqref{eq:xi} в \eqref{eq:UwUwU_2} получаем, что:
+\begin{equation}
+  \label{eq:nu_1}
+  \D{x}{2}{\vartheta _1} = 0 \Rightarrow \vartheta _1 = D x + E
+\end{equation}
+
+Теперь расщепим по $\RLDa{x}{b}{v}{\alpha - n}$ при $n > 0$, аналогично получаем:
+\begin{gather}
+  \label{eq:Meow_1}\D{x}{1}{\vartheta _1} - \frac{1 - \alpha}{2} \D{x}{2}{\xi} = 0 \\
+  \label{eq:Meow_2}\D{x}{2}{\vartheta _1} + \frac{2 - \alpha}{3} \D{x}{3}{\xi} = 0
+\end{gather}
+
+Подставим \eqref{eq:nu_1} в \eqref{eq:Meow_1}, тогда: 
+\begin{equation}
+  \label{eq:AAA}
+  D = (1 - \alpha) A
+\end{equation}
+
+Но, из \eqref{eq:UwUwU_1}:
+
+\begin{equation}
+  \label{eq:BBB}
+  D + (1 - \alpha) A = 0 \Rightarrow D = - (1 - \alpha) A
+\end{equation}
+
+Значит, из \eqref{eq:AAA} и \eqref{eq:BBB} следует:
+\begin{equation*}
+  D = A = 0
+\end{equation*}
+
+Расщепим по $\RLDa{x}{b}{u}{\alpha - n}$ при $n > 0$ (аналогично можно расмотреть $\RLDa{a}{x}{u}{\alpha - n}$), получим:
+\begin{gather*}
+  \label{eq:Gav_1}\D{x}{1}{\mu_1} - \frac{1 - \alpha}{2} \D{x}{2}{\xi} = 0 \\
+  \label{eq:Gav_2}\D{x}{2}{\mu_1} + \frac{2 - \alpha}{3} \D{x}{3}{\xi} = 0
+\end{gather*}
+
+Cравнивая с \eqref{eq:Meow_1} и \eqref{eq:Meow_2}, заключаем:
+\begin{equation*}
+  \mu_1 = \vartheta _1 = E
+\end{equation*}
+
+Теперь расщепим по $\RLD{a}{x}{v}$ и $\RLD{a}{x}{u}$, получим равенства:
+\begin{gather}
+  \mu_1 - \D{t}{}{\tau} = \vartheta _1 - \alpha \D{x}{}{\xi} \\
+  -\vartheta _1 + \D{t}{}{\tau} = - \mu_1 + \alpha \D{x}{}{\xi}
+\end{gather}
+
+Откуда получаем, что:
+\begin{equation}
+  \begin{aligned}
+    \D{t}{}{\tau} = \alpha \D{x}{}{\xi} = \alpha B \\
+    \tau = \alpha B t + f(x)
+  \end{aligned}
+\end{equation}
+
+Расщепим теперь слагаемые вида:
+\begin{equation*}
+  \sum_{n=1}^{\infty} \binom{\alpha}{n} \RLDa{a}{x}{\RLD{a}{x}{v} + \RLD{x}{b}{v}}{\alpha-n} \D{x}{n}{\tau} 
+\end{equation*}
+
+Тогда можно заключить, что:
+\begin{equation*}
+  \D{x}{n}{\tau} = 0 \rightarrow \D{x}{1}{\tau}s = f'(x) = 0 \rightarrow f(x) = F \equiv const
+\end{equation*}
+
+\begin{equation}
+  \tau = \alpha B t + F
+\end{equation}
+
+Из оставшихся слагаемых получаем систему:
+\begin{equation}
+  \label{eq:infinity_group}
+  \begin{cases}
+    \D{t}{}{\mu_0} = \RLD{a}{x}{\vartheta_0} + \RLD{x}{b}{\vartheta_0}\\
+    \D{t}{}{\vartheta_0} = - \RLD{a}{x}{\mu_0} - \RLD{x}{b}{\mu_0}
+  \end{cases}
+\end{equation}
+
+Таким образом, функции $\mu_0$ и $\vartheta_0$ остаются произвольными функциями, удовлетворяющие системе \eqref{eq:infinity_group},
+пораждая бесконечномерную группу преобразований. %TODO каких преобразований??%
+
+Таким образом, получаем следующие инфинитезимальные генераторы:
+\begin{equation}
+  X_1 = \frac{\partial}{\partial x}
+\end{equation}
+\begin{equation}
+  X_2 = \frac{\partial}{\partial t}
+\end{equation}
+\begin{equation}
+  \label{eq:semi_rotation}
+  X_3 = (u + \mu_0(t, x))\frac{\partial}{\partial u} + (v + \vartheta_0(t, x))\frac{\partial}{\partial v}
+\end{equation}
+\begin{equation}
+  X_4 = t \frac{\partial}{\partial t} + x \frac{\partial}{\partial x}
+\end{equation}
+
+Частным случаем \eqref{eq:semi_rotation} при $\mu_0 = v - u$ и $\vartheta_0 = -u - v$ будет преобразование вращения:
+\begin{equation*}
+  X = v \frac{\partial}{\partial u} - u \frac{\partial}{\partial v}
+\end{equation*}
+
+\subsection[Поиск симметрий дробно-дифференциального обобщения уравнения Шредингера с производными Маршо]{ПОИСК СИММЕТРИЙ ДРОБНО-ДИФФЕРЕНЦИАЛЬНОГО ОБОБЩЕНИЯ УРАВНЕНИЯ ШРЕДИНГЕРА С ПРОИЗВОДНЫМИ МАРШО}
+
+Теперь рассмотрим дробно-дифференциальное обобщение уравнения Шредингера на всей числовой оси.
+Как уже было показано (см. теоретическую часть), для того удобно переходить к производным Маршо.
+Уравнение принимает вид:
+
+\begin{equation}
+  \label{eq:shredinger_MD_inline}
+  i \cfrac{\partial \psi}{\partial t} = \MD{+}{\psi} + \MD{-}{\psi}, \quad \alpha \in (1, 2), \quad t > 0, \quad x \in (-\infty, \infty)
+\end{equation}
+
+Аналогично предыдущему пункту полагаем $\psi(t, x) = u(t, x) + i v(t, x)$ и приходим к системе:
+
+\begin{equation}
+  \label{eq:shredinger_MD_system}
+  \begin{cases}
+    \cfrac{\partial u}{\partial t} = \quad \MD{+}{v} + \MD{-}{v} \\
+    \cfrac{\partial v}{\partial t} = - \left( \MD{+}{u} + \MD{-}{u} \right)
+  \end{cases}
+\end{equation}
+
+Общего алгоритма поиска симметрий для оператора дробной производной Маршо нет.
+Поэтому ограничимся лишь проверкой некоторых симметрий. 
+
+Инфинитезимальный генератор будем искать в виде:
+\begin{equation*}
+  X = \tau \frac{\partial}{\partial t}  + \xi \frac{\partial}{\partial x}  + \mu \frac{\partial}{\partial u}  + \vartheta  \frac{\partial}{\partial v}
+\end{equation*}
+
+Тогда инфинитезимальный оператор продолженной группы имеет вид:
+\begin{equation}
+  \label{eq:generator_md}
+  \begin{split}
+    \tilde{X} = X &+ \left(\zeta^u \frac{\partial }{\partial u_t} + \rho^u \frac{\partial }{\partial (\MD{+}{u})} + \lambda^u \frac{\partial }{\partial (\MD{-}{u})} \right) +\\
+    &+\left(\zeta^v \frac{\partial }{\partial v_t}  + \rho^v \frac{\partial }{\partial (\MD{+}{v})}  + \lambda^v \frac{\partial }{\partial (\MD{-}{v})} \right)
+  \end{split}
+\end{equation}
+
+Координаты $\zeta^u, \zeta^v$ будут определяться по формуле \eqref{eq:cont_t}, остальные координаты представим в общем виде \eqref{eq:cont}:
+
+Применим оператор \eqref{eq:generator_md} к системе \eqref{eq:shredinger_MD_system}:
+\begin{equation}
+  \label{eq:def_md}
+  \begin{cases}
+    \begin{aligned}
+      \D{t}{}{\mu} &- u_t \D{t}{}{\tau} - u_x \D{t}{}{\xi}  = \\
+      =& \MD{-}{\vartheta  - \xi v_x - \tau v_t } + \xi \D{x}{}{\MD{-}{v}} + \tau \D{t}{}{\MD{-}{v}} +\\
+      +& \MD{+}{\vartheta  - \xi v_x - \tau v_t } + \xi \D{x}{}{\MD{+}{v}} + \tau \D{t}{}{\MD{+}{v}}
+    \end{aligned} \\
+    \begin{aligned}
+      \D{t}{}{\vartheta } & - v_t \D{t}{}{\tau} - v_x \D{t}{}{\xi}  = \\
+      =& \MD{-}{\mu - \xi u_x - \tau u_t } + \xi \D{x}{}{\MD{-}{u}} + \tau \D{t}{}{\MD{-}{u}} +\\
+      +& \MD{+}{\mu  - \xi u_x - \tau u_t } + \xi \D{x}{}{\MD{+}{u}} + \tau \D{t}{}{\MD{+}{u}}
+    \end{aligned} 
+  \end{cases}
+\end{equation}
+
+Это не определяющая система, но для удобства будем в неё подставлять различные симметрии, а затем, если это будет необходимо, будем делать замену в силу исходной системы \eqref{eq:shredinger_MD_system}.
+\begin{enumerate}
+  \item $\xi = 1, \tau = 0, \mu = 0, \vartheta = 0$. Поскольку производная Маршо от константы равна нулю, то данные координаты в явном виде обнуляют систему \eqref{eq:def_md}.
+  \item $\xi = 0, \tau = 1, \mu = 0, \vartheta = 0$. Аналогично предыдущему пункту.
+  \item $\xi = x, \tau = t, \mu = 0, \vartheta = 0$.
+  \begin{equation*}
+    \begin{aligned}
+      -u_t =& \MD{-}{-x v_x - t v_t} + x \D{x}{}{\MD{-}{v}} + t \D{t}{}{\MD{-}{v}} + \\
+      + &\MD{+}{-x v_x - t v_t} + x \D{x}{}{\MD{+}{v}} + t \D{t}{}{\MD{+}{v}}
+    \end{aligned}
+  \end{equation*}
+
+  В условиях существования производных Маршо от функций $u, v$  можно поменять порядок интегрирования и дифференцирования. Тогда некоторые слагаемые сократятся:
+  \begin{equation*}
+    \begin{aligned}
+      -u_t =& \MD{-}{-x v_x} + x \MD{-}{v_x} + \MD{+}{-x v_x} + x \MD{+}{v_x}
+    \end{aligned}
+  \end{equation*}
+
+  Используя формулу \eqref{eq:MD_xux}:
+  \begin{equation*}
+    \begin{aligned}
+      -u_t =& - \MD{-}{v} - x \MD{-}{v_x} + x \MD{-}{v_x} - \MD{+}{v} - x \MD{+}{v_x} + x \MD{+}{v_x}
+    \end{aligned}
+  \end{equation*}
+  \begin{equation*}
+    \begin{aligned}
+      u_t =& \MD{-}{v} \MD{+}{v}
+    \end{aligned}
+  \end{equation*}
+
+  В силу \eqref{eq:shredinger_MD_system} получаем тождественное равенство.
+  Аналогичное тождество получаем у второго уравнения системы \eqref{eq:def_md}.
+
+  \item $\xi = 0, \tau = 0, \mu = u, \vartheta = v$. После постановки в явном виде получаем систему \eqref{eq:def_md}.
+  \item $\xi = 0, \tau = 0, \mu = -v, \vartheta = u$. Аналогично получаем систему \eqref{eq:def_md}.
+\end{enumerate}
+
+Таким образом, все основные симметрии, допускаемые уравнением \eqref{eq:shredinger_RL_inline} на конечном отрезке допускаются и в случае бесконечного интервала.
+
+Заметим, однако, что в предельном случае $\alpha = 2$, то есть когда дробные производные переходят в классическую вторую производную,уравнение будет допускать аналог преобразования Галлилея при:
+\begin{equation*}
+  \xi = t, \tau = 0, \mu = \frac{1}{4} xv, \vartheta = - \frac{1}{4} xu
+\end{equation*}
+
+Попробуем проверить будет ли иметь место аналог такого преобразования в случае дробного порядка на бесконечном интервале. Положим:
+\begin{equation*}
+  \xi = t, \tau = 0
+\end{equation*}
+
+Подставим их в \eqref{eq:def_md}, для первого уравнения системы получим:
+\begin{equation*}
+  \mu_t - u_x = \MD{+}{\vartheta} + \MD{-}{\vartheta}
+\end{equation*}
+
+По аналогии с предельным случаем $\alpha = 2$  положим $\mu = \beta x v, \vartheta = - \beta x u$:
+\begin{equation*}
+  u_x = \beta \left(\mathbb{D}_{+}^{\alpha-1}[u] + \mathbb{D}_{-}^{\alpha-1}[u]\right)
+\end{equation*}
+
+Данное равенство возможно только в случае целого $\alpha = 2$.
+При любом другом выборе $\mu$ и $\vartheta$ усложняется правая часть уравнения и не удается подобрать такие функции,
+чтобы получить необходимую допускаемую симметрию.
 \newpage
-\section*{ЗАКЛЮЧЕНИЕ}
+\section*{ЗАКЛЮЧЕНИЕ}ы
 \addcontentsline{toc}{section}{Заключение}
-В ходе выполнения курсовой работы был изучен метод численного решения волнового уравнения и уравнения затухающих колебаний
-с помощью явной разностной схемы с краевыми условиями Мура и отражения. Показано, что поглощение по условиям Мура 
-выполняется корректно в случае колебания с затуханием. В качестве примера комбинации отражающих и поглощающих условий была рассмотрена дифракция на двух щелях.
 
-Также был смоделирован переход волнового пакета из одной однородной среды в другую и продемонстрировано разложение волны на преломленную
-с меньшей амплитудой и отраженную, которая сложилась с проходящей волной. Был программно реализовано затухание колебательного процесса, 
-а также его применимость к построению идеально согласованных слоев (PML).
 
 \newpage
 
 \addcontentsline{toc}{section}{Список литературы}
 \begin{thebibliography}{9}
-  \bibitem{Chen}
-  Chen, Jingyi Zhao, Jian-Guo.,
-  Application of the Nearly Perfectly Matched Layer to Seismic-Wave Propagation Modeling in Elastic Anisotropic Media. //
-  The Bulletin of the Seismological Society of America. — 2011 — V.101. — P. 2866-2871.
-  \bibitem{Mur}
-  Mur, G., Absorbing boundary conditions for the finite-difference approximation of the time-domain electromagnetic-fieldequations //
-   IEEE Trans. Electromagn. Compat. — 1981 — Vol. EMC-23, No. 4,— P. 377–382.
-  \bibitem{berenger} 
-  J. Berenger, A perfectly matched layer for the absorption of electromagnetic waves [Текст] / J. Berenger //
-  Journal of Computational Physics. — 1994. — V. 114. — P. 185-200
-  \bibitem{Loh}
-  P.-R. Loh, A. F. Oskooi, M. Ibanescu, M. Skorobogatiy, S. G. Johnson.,
-  Fundamental relation between phase and group velocity, and application
-  to the failure of perfectly matched layers in backward-wave structures [Текст] //
-  Physical Review E. — 2009. — V. 79, — P. 13-24.
-  \bibitem{ChenHsuZhou} 
-  Chen G., Hsu S., Zhou J., Snapback repellers as a cause of chaotic vibration of the wave equation
-  with a van der Pol boundary condition and energy injection at the middle of the span [Текст] // Journal of
-  Mathematical Physics — 1998. — V.39 — P. 6459–6489
-  \bibitem{Johnson}
-  S. G. Johnson, Notes on the algebraic structure of wave equations. [Текст] /  S. G. Johnson // Journal of Mathematical Physics — 2001. — P. 18
-  \bibitem{kalitkin}
-  Калиткин Н.Н. Численные методы [Текст]: учебник / Н.Н. Калиткин. — Москва: Наука, 1978. — 512 с.
-  \bibitem{samarskiy}
-  Самарский А.А. Теория разностных схем [Текст]: учебник / А.А.Самарский, — Москва: Наука, 1977. — 656 с.
-  \end{thebibliography}
+  \bibitem{ibragimov}
+  Ибрагимов Н. Х. Группы преобразований в математической физике. М.: Наука, 1983. 280 с.
+  \bibitem{luka}
+  Лукащук, В. О., С. Ю. Лукащук. Обыкновенные дифференциальные уравнения дробного порядка: основы классической теории и группового анализа. - Уфа: УГАТУ, 2022. 
+  \bibitem{kasatkin-disert}
+  Касаткин А. А. Симметрии и точные решения уравнений с производными дробного порядка типа Римана–Лиувилля: Дисс. канд. физ.-мат. наук. 2013. УГАТУ. 118 с.
+  \bibitem{samko}
+  Самко С. Г., Килбас А. А., Маричев О. И. Интегралы и производные дробного порядка и некоторые их приложения. Минск: Наука и техника, 1987. 688 с.
+\end{thebibliography}
 
- % \includepdf[pages={17-31}]{src/word pdfs.pdf}
+% \includepdf[pages={17-31}]{src/word pdfs.pdf}
 \end{document}
 
 
