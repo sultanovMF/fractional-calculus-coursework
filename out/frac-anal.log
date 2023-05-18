@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.5.12)  14 MAY 2023 10:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.5.12)  14 MAY 2023 14:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2347,15 +2347,17 @@ Package: textcase 2022/07/10 v1.03 Text only upper/lower case changing (DPC)
 Package textcase Info: Defining Legacy names on input line 20.
 )
 \c@definition=\count312
-LaTeX Font Info:    Trying to load font information for T1+Tempora-TLF on input line 65.
+\c@theorem=\count313
+\c@corollary=\count314
+LaTeX Font Info:    Trying to load font information for T1+Tempora-TLF on input line 68.
  (/usr/share/texlive/texmf-dist/tex/latex/tempora/T1Tempora-TLF.fd
 File: T1Tempora-TLF.fd 2016/02/02 (autoinst) Font definitions for T1/Tempora-TLF.
 )
 LaTeX Font Info:    Font shape `T1/Tempora-TLF/m/n' will be
-(Font)              scaled to size 14.0pt on input line 65.
+(Font)              scaled to size 14.0pt on input line 68.
  (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count313
+\l__color_backend_stack_int=\count315
 \l__pdf_internal_box=\box59
 ) (out/frac-anal.aux
 LaTeX Font Info:    Trying to load font information for T2A+Tempora-TLF on input line 20.
@@ -2367,74 +2369,74 @@ LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/n' will be
 )
 \openout1 = `frac-anal.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 65.
-LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 65.
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 68.
+LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 68.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 65.
-LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 65.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 68.
+LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 68.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OT2/cmr/m/n on input line 65.
-LaTeX Font Info:    Trying to load font information for OT2+cmr on input line 65.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OT2/cmr/m/n on input line 68.
+LaTeX Font Info:    Trying to load font information for OT2+cmr on input line 68.
  (/usr/share/texlive/texmf-dist/tex/latex/cyrillic/ot2cmr.fd
 File: ot2cmr.fd 2001/08/11 v3.2c Computer Modern Cyrillic font definitions
 )
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for T2C/cmr/m/n on input line 65.
-LaTeX Font Info:    Trying to load font information for T2C+cmr on input line 65.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for T2C/cmr/m/n on input line 68.
+LaTeX Font Info:    Trying to load font information for T2C+cmr on input line 68.
  (/usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2ccmr.fd
 File: t2ccmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for T2B/cmr/m/n on input line 65.
-LaTeX Font Info:    Trying to load font information for T2B+cmr on input line 65.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for T2B/cmr/m/n on input line 68.
+LaTeX Font Info:    Trying to load font information for T2B+cmr on input line 68.
  (/usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2bcmr.fd
 File: t2bcmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 65.
-LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 65.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 68.
+LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 68.
  (/usr/share/texlive/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 65.
-LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 65.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 68.
+LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 68.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 65.
-LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 65.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 68.
+LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 68.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Info: Command `\dddot' is already robust on input line 65.
-LaTeX Info: Command `\ddddot' is already robust on input line 65.
-LaTeX Info: Redefining \th on input line 65.
-Package hyperref Info: Link coloring OFF on input line 65.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Info: Command `\dddot' is already robust on input line 68.
+LaTeX Info: Command `\ddddot' is already robust on input line 68.
+LaTeX Info: Redefining \th on input line 68.
+Package hyperref Info: Link coloring OFF on input line 68.
  (out/frac-anal.out) (out/frac-anal.out)
 \@outlinefile=\write3
 \openout3 = `frac-anal.out'.
@@ -2474,12 +2476,12 @@ Package hyperref Info: Link coloring OFF on input line 65.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@mv@tabular=\count314
-\c@mv@boldtabular=\count315
+\c@mv@tabular=\count316
+\c@mv@boldtabular=\count317
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count316
+\c@lstlisting=\count318
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 LGR\textpentedeka already defined.
@@ -2561,16 +2563,16 @@ LGR\textaristerikeraia already defined.
 fontencoding LGR patched
 ) (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count317
+\scratchcounter=\count319
 \scratchdimen=\dimen197
 \scratchbox=\box60
-\nofMPsegments=\count318
-\nofMParguments=\count319
+\nofMPsegments=\count320
+\nofMParguments=\count321
 \everyMPshowfont=\toks39
-\MPscratchCnt=\count320
+\MPscratchCnt=\count322
 \MPscratchDim=\dimen198
-\MPnumerator=\count321
-\makeMPintoPDFobject=\count322
+\MPnumerator=\count323
+\makeMPintoPDFobject=\count324
 \everyMPtoPDFconversion=\toks40
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -2587,7 +2589,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/b/n' will be
-(Font)              scaled to size 14.0pt on input line 67.
+(Font)              scaled to size 14.0pt on input line 70.
  (out/frac-anal.toc
 LaTeX Font Info:    Calculating math sizes for size <14> on input line 2.
 LaTeX Font Info:    Trying to load font information for OT1+Tempora-TLF on input line 2.
@@ -2631,51 +2633,86 @@ Overfull \hbox (20.0101pt too wide) in paragraph at lines 4--4
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (8.67471pt too wide) in paragraph at lines 77--78
+[]\T2A/Tempora-TLF/m/n/14 Целью дан-ной ра-бо-ты яв-ля-ет-ся ис-сле-до-ва-ние свойств сим-мет-рии дробно-
+ []
 
-LaTeX Font Warning: Command \huge invalid in math mode on input line 99.
+
+Overfull \hbox (21.39462pt too wide) in paragraph at lines 77--78
+\T2A/Tempora-TLF/m/n/14 тем за-ме-ны обыч-ных про-из-вод-ных на дроб-ные про-из-вод-ные Римана-Лиувилля
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+Tempora-TLF on input line 82.
+(/usr/share/texlive/texmf-dist/tex/latex/tempora/TS1Tempora-TLF.fd
+File: TS1Tempora-TLF.fd 2016/02/02 (autoinst) Font definitions for TS1/Tempora-TLF.
+)
+LaTeX Font Info:    Font shape `TS1/Tempora-TLF/m/n' will be
+(Font)              scaled to size 14.0pt on input line 82.
+ [2] [3]
+Overfull \hbox (6.0707pt too wide) in paragraph at lines 183--184
+[]\T2A/Tempora-TLF/m/n/14 Алгоритм по-стро-е-ния до-пус-ка-е-мых ге-не-ра-то-ров груп-пы сим-мет-рий диф-
+ []
+
+
+LaTeX Font Warning: Command \huge invalid in math mode on input line 195.
 
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/n' will be
-(Font)              scaled to size 29.03607pt on input line 99.
+(Font)              scaled to size 29.03607pt on input line 195.
 
-LaTeX Font Warning: Command \huge invalid in math mode on input line 99.
+LaTeX Font Warning: Command \huge invalid in math mode on input line 195.
 
-[2]
-Overfull \hbox (0.56555pt too wide) detected at line 144
+
+Overfull \hbox (2.81271pt too wide) in paragraph at lines 197--198
+[]\T2A/Tempora-TLF/m/n/14 Координаты до-пус-ка-е-мых опе-ра-то-ров ищут-ся из опре-де-ля-ю-ще-го урав-
+ []
+
+[4] [5]
+Overfull \hbox (23.57758pt too wide) detected at line 254
 []
  []
 
 
-Overfull \hbox (1.12874pt too wide) in paragraph at lines 154--155
-[]\T2A/Tempora-TLF/m/n/14 Рассматривается дробно-дифферециальное обоб-ще-ние урав-не-ние Шре-
- []
-
-[3]
-Overfull \hbox (11.07965pt too wide) detected at line 222
+Overfull \hbox (25.00003pt too wide) detected at line 254
 [][][][]
  []
 
-[4] [5] [6] [7] [8] [9] [10]
+
+Overfull \hbox (2.81271pt too wide) in paragraph at lines 255--256
+[]\T2A/Tempora-TLF/m/n/14 Координаты до-пус-ка-е-мых опе-ра-то-ров ищут-ся из опре-де-ля-ю-ще-го урав-
+ []
+
+
+Overfull \hbox (1.12874pt too wide) in paragraph at lines 266--267
+[]\T2A/Tempora-TLF/m/n/14 Рассматривается дробно-дифферециальное обоб-ще-ние урав-не-ние Шре-
+ []
+
+[6]
+Overfull \hbox (11.07965pt too wide) detected at line 334
+[][][][]
+ []
+
+[7] [8] [9] [10] [11] [12] [13]
 
 Package caption Warning: Unused \captionsetup[figure] on input line 41.
 See the caption package documentation for explanation.
 
-[11] (out/frac-anal.aux)
+[14] (out/frac-anal.aux)
 Package rerunfilecheck Info: File `frac-anal.out' has not changed.
-(rerunfilecheck)             Checksum: 58A53DD3A787647197044B1F907C0C35;3526.
+(rerunfilecheck)             Checksum: 3A2F0C27F7E53A8E255256EB72296D56;3528.
  ) 
 Here is how much of TeX's memory you used:
- 23471 strings out of 476091
- 371254 string characters out of 5794081
- 1877330 words of memory out of 5000000
- 43377 multiletter control sequences out of 15000+600000
- 544326 words of font info for 88 fonts, out of 8000000 for 9000
+ 23533 strings out of 476091
+ 372278 string characters out of 5794081
+ 1875330 words of memory out of 5000000
+ 43416 multiletter control sequences out of 15000+600000
+ 544991 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,17n,117p,951b,582s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/tempora/tmp_q3dzgc.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/tempora/t2a-tempora.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/tempora/Tempora-Bold.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/tempora/Tempora-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on out/frac-anal.pdf (11 pages, 125189 bytes).
+ 108i,17n,117p,951b,586s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/tempora/tmp_q3dzgc.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/tempora/tmp_ac5xuc.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/tempora/t2a-tempora.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/tempora/Tempora-Bold.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/tempora/Tempora-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
+Output written on out/frac-anal.pdf (14 pages, 142406 bytes).
 PDF statistics:
- 243 PDF objects out of 1000 (max. 8388607)
- 210 compressed objects within 3 object streams
- 62 named destinations out of 1000 (max. 500000)
+ 291 PDF objects out of 1000 (max. 8388607)
+ 254 compressed objects within 3 object streams
+ 79 named destinations out of 1000 (max. 500000)
  73 words of extra memory for PDF output out of 10000 (max. 10000000)
 

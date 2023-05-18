@@ -1,10 +1,10 @@
 \babel@toc {russian}{}\relax 
 \contentsline {section}{Введение}{2}{Doc-Start}%
-\contentsline {section}{\numberline {1}Теоретическая часть}{2}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Основные сведения о дробных производных Римана-Лиувилля и Маршо}{2}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Алгоритм поиска симметрий дробно-дифференциальных уравнений}{2}{subsection.1.2}%
-\contentsline {section}{\numberline {2}Практическая часть}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Поиск симметрий дробно-дифференциального обобщения уравнения Шредингера с производными Римана-Лиувилля}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Поиск симметрий дробно-дифференциального обобщения уравнения Шредингера с производными Маршо}{7}{subsection.2.2}%
-\contentsline {section}{Заключение}{10}{Item.5}%
-\contentsline {section}{Список литературы}{11}{Item.5}%
+\contentsline {section}{\numberline {1}Теоретическая часть}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Основные сведения о дробных производных Римана-Лиувилля и Маршо}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Алгоритм поиска симметрий дробно-дифференциальных уравнений}{4}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Практическая часть}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Поиск симметрий дробно-дифференциального обобщения уравнения Шредингера с производными Римана-Лиувилля}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Поиск симметрий дробно-дифференциального обобщения уравнения Шредингера с производными Маршо}{10}{subsection.2.2}%
+\contentsline {section}{Заключение}{13}{Item.11}%
+\contentsline {section}{Список литературы}{14}{Item.11}%
